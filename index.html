@@ -6,13 +6,10 @@
         <link rel="stylesheet" href="assets/css/style.css">
         <title>Boolzapp</title>
     </head>
-    <body>
-              
-      <div class="siteContainer">
+    <body>          
+      <div class="siteContainer flexCentered">
               <!-- container centrale, cuore del sito -->
         <div class="container">
-           
-           
            
             <!-- colonna sinistra -->
             <div class="container_left" >
@@ -29,23 +26,27 @@
                         <a href="#"><i class="fas fa-ellipsis-v"></i></a>
                     </div>
                 </div>
+               
                 <!-- sub-colonna alla colonna sinistra -->
                 <div class="container_left_column">
                     <!-- riquadro per attivare notifiche desktop -->
-                    <div class="notify_request flexCentered">
+                    <div class="notify_request">
                         <div class="bellSlashed flexCentered"><i class="fas fa-bell-slash"></i></div>
                         <div class="notify_details">
                             <p>Ricevi notifiche di nuovi messaggi</p>
                             <p><a href="#">Attiva notifiche desktop</a></p>
                         </div>
                     </div>
+                   
                     <!-- campo di ricerca tra le chat -->
                     <div id="chatList_search" class="flexCentered">
                         <i class="fas fa-search"></i>
                         <input type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
+                    
                     <!-- lista delle chat -->
                     <div class="chatList">
+                        
                         <!-- singola chat -->
                         <div class="single_chat chat_selected flexCentered">
                             <img class="avatar" src="assets/img/avatar1.jpg" alt="Michele">
@@ -98,8 +99,6 @@
                 </div>
             </div> 
 
-
-
             <!-- colonna destra -->
             <div class="container_right" >
                  <!-- barra in alto alla colonna destra -->
@@ -123,41 +122,34 @@
                 </div>
                 <!-- spazio riservato alla conversazione -->
                 <div class="container_right_chatSpace">
-                    
+                    <!-- messaggio dell'amico -->
                     <div class="chat_message friend_msg">
                         <a href=""><i class="fa fa-chevron-down"></i></a>
-                        <p class="" id="">Sotto la panca la capra canta, sopra la panca la capra crepa</p>
+                        <p>Sotto la panca la capra canta, sopra la panca la capra crepa</p>
                         <small>15:40</small>
                     </div>
-                    
+                    <!-- messaggio dell'utente -->
                     <div class="chat_message user_msg">
                         <a href=""><i class="fa fa-chevron-down"></i></a>
-                        <p class="" id="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea aliquid necessitatibus maiores vitae voluptatum iusto eveniet quo sequi repellat eum explicabo dignissimos eius voluptate, et hic placeat quod id eos.</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea aliquid necessitatibus maiores vitae voluptatum iusto eveniet quo sequi repellat eum explicabo dignissimos eius voluptate, et hic placeat quod id eos.</p>
                         <small>15:40</small>
                     </div>
-
-
                 </div>
 
                 <!-- barra per digitazione e invio messaggi -->
                 <div class="container_right_bottomBar no_link_bottom">
                     <a id="smiles_box" href="#"><i class="far fa-smile"></i></a>
-                    <input type="text" placeholder="Scrivi un messaggio">
-                    <a id="vocal_msg" href="#"><i class="fas fa-microphone"></i></a>
-                    <a id="send" href="#"><i class="fab fa-telegram-plane"></i>></a>
+                    <!-- Input di testo per scrivere messaggio da inviare -->
+                    <input id="sending_message" type="text" placeholder="Scrivi un messaggio">
+                    <!-- pulsante invio o messaggio vocale. Cambio gestito da JS -->
+                    <div class=" flexCentered">
+                        <a id="vocal_msg" href="#"><i class="fas fa-microphone"></i></a>
+                        <a id="send" href="#"><i class="fab fa-telegram-plane"></i></a>
+                    </div>
                 </div>
             </div> 
         </div>
-
-
-
-
-
-
       </div> <!-- fine .siteContainer -->
-
-
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="assets/js/main.js"></script>
     </body>

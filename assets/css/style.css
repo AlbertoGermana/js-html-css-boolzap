@@ -5,9 +5,44 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
- }
+}
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* +++++++++++++++++++++++++++++++  COMMON RULES ++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
- /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.container_left_topBar,
+.container_right_topBar{
+  height: 75px;
+  width: 100%;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container_left_topBar>div,
+.container_right_topBar>div{
+  height: 100%;
+}
+.half_bar{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.avatar img{
+  height: 50px;
+  border-radius: 100%;
+  margin-left: 20px;
+}
+
+.no_link a{
+  text-transform: none;
+  font-size: 22px;
+  color: #b1b1b1;
+  margin-right: 20px;
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
  /* ++++++++++++++++++++++++++++++++ STYLE RULES +++++++++++++++++++++++++++++++++++ */
  /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
@@ -29,48 +64,73 @@
   max-width: 1540px;
   background-color:#eaeaea;
 }
+
+ /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+ /* ++++++++++++++++++++++++++++++++  LEFT SIDE  +++++++++++++++++++++++++++++++++++ */
+ /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
 .container_left{
   width: calc(100% / 3);
   height: 100%;
-  background-color: red;
   border-right: 1px solid #dbdbd3;
-  position: relative;
   float: left;
 }
-.container_left_topBar{
-  height: 75px;
+.container_left_chatsList{
+  height: calc(100% - 75px);
   width: 100%;
-  position: absolute;
-  background-color: black;
+  overflow-y: scroll;
+  background-color: yellow;
 }
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++  RIGHT SIDE  ++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
 .container_right{
   width: calc(100% * 2 / 3);
   height: 100%;
-  background-color: pink;
-  position: relative;
   float: left;
+  background-color: pink;
 }
 .container_right_topBar{
   height: 75px;
   width: 100%;
-  /* position: relative; */
-  background-color: black;
+}
+.friend{
+  display: flex;
+  align-items: center;
+}
+.friend_chat_details{ 
+  margin-left: 20px;
 }
 .container_right_chatSpace{
   height: calc(100% - 150px);
   width: 100%;
-  /* position: relative; */
-  background-color: yellow;
   overflow-y: scroll;
+  background: url('../img/bg_chat.jpg');
 }
-
 .container_right_bottomBar{
   height: 75px;
   width: 100%;
-  /* position: relative; */
-  background-color: black;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+.no_link_bottom a{
+  text-transform: none;
+  font-size: 28px;
+  color: #6b7376;
+  margin: 0 40px;
+}
+.container_right_bottomBar input{
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  border: 0;
+  text-indent: 16px;
+}
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* +++++++++++++++++++++++++++++++ MEDIA QUERIES ++++++++++++++++++++++++++++++++++ */
@@ -88,9 +148,7 @@
 
 /* Large devices (desktops, 992px and up) */
 @media all and (min-width: 992px) and (max-width:1199px) {
-  .container{
-    width: ;
-   }
+  
 }
 
 /* Extra large devices (large desktops, 1200px and up) */

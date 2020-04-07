@@ -9,6 +9,18 @@
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* +++++++++++++++++++++++++++++++  COMMON RULES ++++++++++++++++++++++++++++++++++ */
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+@font-face {
+  font-family: 'Lato-Regular';
+  src: url('../fonts/Lato-Regular.ttf');
+}
+body{
+  font-family: 'Lato-Regular';
+}
+.flexCentered{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .container_left_topBar,
 .container_right_topBar{
@@ -29,10 +41,10 @@
   align-items: center;
 }
 
-.avatar img{
+.avatar{
   height: 50px;
   border-radius: 100%;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .no_link a{
@@ -62,7 +74,7 @@
   height: 95vh;
   min-width: 900px;
   max-width: 1540px;
-  background-color:#eaeaea;
+  background-color:white;
 }
 
  /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -72,16 +84,73 @@
 .container_left{
   width: calc(100% / 3);
   height: 100%;
-  border-right: 1px solid #dbdbd3;
+  /* border-right: 1px solid #dbdbd3; */
+  border-right: 1px solid white;
   float: left;
 }
-.container_left_chatsList{
+.container_left_column{
   height: calc(100% - 75px);
   width: 100%;
-  overflow-y: scroll;
-  background-color: yellow;
+}
+.notify_request{
+  padding: 15px 20px;
+  background-color: #8edafc;
+}
+.notify_details a{
+  color: gray;
+  font-size: 14px;
+}
+.notify_request .bellSlashed{
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 100%;
+  font-size: 22px;
+  margin-right: 10px;
+}
+#chatList_search{
+  height: 35px;
+  width: 95%;
+  border: 1px #dbdbd3 solid;
+  border-radius: 5px;
+  margin: 8px auto;
+  background-color: #fff;
+}
+#chatList_search input{
+  height: 26px;
+  width: 86%;
+  padding: 0 20px;
+  border: 0; 
+}
+.single_chat{
+  padding: 15px 5px;
+  border-bottom: 1px solid #ebebe7;
+}
+.single_chat_details{
+  width: 65%;
+  margin-left: 20px;
+}
+.single_chat_lastWrite{
+  height: 50px;
+}
+.lastWrite{
+  font-size: 12px;
+  color: gray;
+  margin-top: 10px;
+}
+.chat_selected{
+  background-color: #eaeaea;
+}
+.single_chat_lastMsg{
+  font-size: 12px;
+  color: gray;
+  margin: 6px 0;
 }
 
+.chatList{
+  height: calc(100% - 138px);
+  overflow-y: scroll;
+}
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* ++++++++++++++++++++++++++++++++  RIGHT SIDE  ++++++++++++++++++++++++++++++++++ */
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -90,7 +159,6 @@
   width: calc(100% * 2 / 3);
   height: 100%;
   float: left;
-  background-color: pink;
 }
 .container_right_topBar{
   height: 75px;
@@ -103,6 +171,14 @@
 .friend_chat_details{ 
   margin-left: 20px;
 }
+#friend_selected{
+  font-size: 19px;
+}
+small{
+  font-size: 14px;
+  color: gray;
+}
+
 .container_right_chatSpace{
   height: calc(100% - 150px);
   width: 100%;
@@ -131,6 +207,13 @@
   border: 0;
   text-indent: 16px;
 }
+
+/* +++++++++++++++++++++++++++++++ altro ++++++++++++++++++++++++++++++++++ */
+#send{
+  display: none;
+}
+
+
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* +++++++++++++++++++++++++++++++ MEDIA QUERIES ++++++++++++++++++++++++++++++++++ */

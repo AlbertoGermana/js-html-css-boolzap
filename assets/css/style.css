@@ -1,0 +1,99 @@
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++ RESET RULES +++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+
+ /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+ /* ++++++++++++++++++++++++++++++++ STYLE RULES +++++++++++++++++++++++++++++++++++ */
+ /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* +++++++++++++++++++++++++++++++++ BIG CONTAINERS ++++++++++++++++++++++++++++++++ */
+ body{
+  background: url('../img/bg.jpg') repeat-x;
+}
+.siteContainer{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  width: 80vw;
+  height: 95vh;
+  min-width: 900px;
+  max-width: 1540px;
+  background-color:#eaeaea;
+}
+.container_left{
+  width: calc(100% / 3);
+  height: 100%;
+  background-color: red;
+  border-right: 1px solid #dbdbd3;
+  position: relative;
+  float: left;
+}
+.container_left_topBar{
+  height: 75px;
+  width: 100%;
+  position: absolute;
+  background-color: black;
+}
+.container_right{
+  width: calc(100% * 2 / 3);
+  height: 100%;
+  background-color: pink;
+  position: relative;
+  float: left;
+}
+.container_right_topBar{
+  height: 75px;
+  width: 100%;
+  /* position: relative; */
+  background-color: black;
+}
+.container_right_chatSpace{
+  height: calc(100% - 150px);
+  width: 100%;
+  /* position: relative; */
+  background-color: yellow;
+  overflow-y: scroll;
+}
+
+.container_right_bottomBar{
+  height: 75px;
+  width: 100%;
+  /* position: relative; */
+  background-color: black;
+}
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* +++++++++++++++++++++++++++++++ MEDIA QUERIES ++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* Small devices (landscape phones, 576px and up) */
+@media all and (min-width: 576px) and (max-width: 767px) {
+
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media all and (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media all and (min-width: 992px) and (max-width:1199px) {
+  .container{
+    width: ;
+   }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media all and (min-width: 1200px) {
+
+}

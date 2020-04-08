@@ -181,6 +181,7 @@ small{
 .container_right_chatSpace{
   height: calc(100% - 150px);
   width: 100%;
+  padding: 15px;
   overflow-y: scroll;
   background: url('../img/bg_chat.jpg');
 }
@@ -237,13 +238,11 @@ small{
 }
 .friend_msg{
   background-color: white;
-  margin-left: 40px;
   clear: both;
   float: left;
 }
 .user_msg{
   background-color: #D5F9BA;
-  margin-right: 40px;
   float: right;
   clear: both;
 }

@@ -8,6 +8,10 @@ quando clicco sull’input e quindi il cursore è pronto a scrivere per l’inse
 se lo volete fare tenetelo pure nella cartella principale.
 */
 
+/* Milestone 2:
+Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina) */
+
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* +++++++++++++++++++++++++++++++  SVOLGIMENTO  ++++++++++++++++++++++++++++++++++ */
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -15,40 +19,74 @@ se lo volete fare tenetelo pure nella cartella principale.
 $(document).ready(function(){
     
     var sendingMsg = $('#sending_message');
-    
+    var searchField = $('#searchField');
+    var singleChatName = $('.single_chat_name');
+    //debug//
+    var tastoCercaContatto = $('#chatList_search>i');
+
     //al click del pulsante invia. 
-    /* NOTA: avendo utilizzato piu avanti focusin e focusout ho dovuto mettere l'azione click all'elemento microfono perche' nel modo di cliccare giustamente il focus cambia */
-    $('#vocal_msg').click(
+    $('.sendMsg').click(
         function(){
             /* salvo testo messaggio nella variabile */                       
             var textToSend = sendingMsg.val();
             //lancio funzione e gli do in pasto il messagio in modo da stampare html con il messaggio
             sendByUser(textToSend);
+
+            //svuoto il campo di testo 
+            sendingMsg.val('');
+
+            // lancio con 1 secondo di ritardo la risposta dell'amico
+            setTimeout(sendByFriend, 1000);
+            
         }
     )
-    /* al focus in cambio icona */
-    sendingMsg.focusin(
+    sendingMsg.keyup(
         function(){
-            $('#send').show();
-            $('#vocal_msg').hide();
-            
-        });
-    /* al focus out cambio icona */
-    sendingMsg.focusout(
-        function(){
-            $('#send').hide();
-            $('#vocal_msg').show();            
-        });
+            if($(this).val() == ''){
+                $('#send').hide();
+                $('#vocal_msg').show();
+            }else{
+                $('#send').show();
+                $('#vocal_msg').hide();}
+        }
+    )
+
+
     /* inserisco html per inserire nuovo messaggio inviato */
     function sendByUser(messaggio){
         $('.container_right_chatSpace').append('<div class="chat_message user_msg"><a href=""><i class="fa fa-chevron-down"></i></a><p>' + messaggio + '</p><small>15:40</small></div>');
     }
+    /* messaggio di risposta */
+    function sendByFriend(){
+        $('.container_right_chatSpace').append('<div class="chat_message friend_msg"><a href=""><i class="fa fa-chevron-down"></i></a><p>' + 'Ok!' + '</p><small>15:40</small></div>');
+    }
 
 
-
-
-
-
-
-
+// filtro contatti
+  // all'inserimento di caratteri da tastiera
+  searchField.keyup(function(){
+          // salvarmi input utente in campo del filtro
+        var testoInserito = searchField.val();
+        
+        // ciclo tra tutti i nomi della lista chat
+        singleChatName.each(function(){
+            // se il testo digitato è incluso tra i nomi
+            if($(this).text().toLowerCase().includes(testoInserito.toLowerCase())){
+                /* mostro i risultati */
+                $(this).parent().parent().show();
+             // se il testo digitato non è incluso tra i nomi
+            }else{
+                // escludo quelli che non contengono le lettere digitate
+                $(this).parent().parent().hide();
+            }        
+        })
+    })  
 });
+
+
+/*  to do list:
+Inserire il tasto "invio" per l'invio dei messaggi
+Sistemare pulsante di invio microfono-aeroplano
+inserire mousein e mouseover sul singolo messaggio per show/hide freccia opzioni
+controllo che non mandi messaggi vuoti
+*/

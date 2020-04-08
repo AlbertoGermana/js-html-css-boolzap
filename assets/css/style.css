@@ -254,3 +254,6 @@ small{
 #send{
   display: none;
 }
+.fa.fa-chevron-down{
+  display: none;
+}

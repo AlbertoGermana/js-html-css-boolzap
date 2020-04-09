@@ -213,22 +213,23 @@ small{
   border: 0;
   text-indent: 16px;
 }
-
 .chat_message{
   min-width: 130px;
   max-width: 400px;
-  position: relative;
   border-radius: 10px;
   margin-top: 16px;
+  position: relative;
 }
-.chat_message a{
+.chat_menu_btn{
   position: absolute;
   top: 3px;
   right: 10px;
   color: gray;
+  text-decoration: none;
 }
-.chat_message p{
-  padding: 10px;
+
+.message p{
+  padding: 15px;
 }
 .chat_message small{
   position: absolute;
@@ -245,6 +246,25 @@ small{
   background-color: #D5F9BA;
   float: right;
   clear: both;
+}
+.msg_info{
+  position: absolute;
+  right: 6px;
+  top: 15px;
+  display: none;
+}
+.msg_info ul{
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+.msg_info ul li{
+  list-style-type: none;
+  color: slategray;
+}
+.msg_info ul li:hover{
+  color: black;
+  font-weight: bold;
 }
 
 /* +++++++++++++++++++++++++++++++ ICONE INVIO ++++++++++++++++++++++++++++++++++ */

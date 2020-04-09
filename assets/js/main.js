@@ -12,6 +12,13 @@ se lo volete fare tenetelo pure nella cartella principale.
 Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
 Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina) */
 
+
+/* Milestone 3:
+Click sul contatto mostra la conversazione del contatto cliccato,
+è possibile inserire nuovi messaggi per ogni conversazione
+Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permette di cancellare il messaggio selezionato
+ */
+
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* +++++++++++++++++++++++++++++++  SVOLGIMENTO  ++++++++++++++++++++++++++++++++++ */
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -62,14 +69,35 @@ $(document).ready(function(){
             }        
         });
     });
-    // al mouse hover del singolo messaggio appare la freccia del menu
-    $('.chat_message').mouseover(function(){
-        $(this).children().children('.fa.fa-chevron-down').show();
-    })
-    // al mouse out del singolo messaggio scompare la freccia del menu
-    $('.chat_message').mouseleave(function(){
-        $(this).children().children('.fa.fa-chevron-down').hide();
-    })
+    // Al passaggio del mouse si mostra/nasconde il bottone per l'info menu
+    $('.container_right_chatSpace').on('mouseover','.chat_message',
+        function(){
+            $(this).find('.fa.fa-chevron-down').show();
+        })
+    $('.container_right_chatSpace').on('mouseleave','.chat_message',
+        function(){
+            $(this).find('.fa.fa-chevron-down').hide();
+        })
+    // Al click del mouse sul pulsante del menu-messaggio appare il menu
+    $('.chat_message').on('click','.chat_menu_btn',
+        function(){
+            $(this).parent().children('.msg_info').show();
+        })
+    // Se esco dal menu del messaggio questo scompare
+    $('.chat_message').on('mouseleave','.msg_info',
+        function(){
+            $(this).hide();
+        })
+    // Se clicclo sul secondo elemento del menu-messaggio (cancella), nasconde il messaggio
+    /* $('.msg_info').on('click','ul li:last-child',
+        function(){
+            $(this).parent().parent().parent().hide();
+        }) */
+    
+    $('.msg_info').on('click','ul li:last-child',
+        function(){
+            $(this).parent().parent().parent().remove();
+        })
 
 
     ////////////////////// funzioni //////////////////////////
@@ -96,10 +124,16 @@ $(document).ready(function(){
     
        /* appendo html con nuovo messaggio */
        function sendByUser(messaggio){
-           $('.container_right_chatSpace').append('<div class="chat_message user_msg"><a href=""><i class="fa fa-chevron-down"></i></a><p>' + messaggio + '</p><small>15:40</small></div>');
+        $('.container_right_chatSpace').append('<div class="chat_message user_msg"><a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a><div class="message"><p>' + messaggio + '</p></div><div class="msg_info"><ul><li>Info</li><li>Cancella</li></ul></div><small>15:40</small></div>');
        }
        /* appendo html con nuovo messaggio di risposta */
        function sendByFriend(){
-           $('.container_right_chatSpace').append('<div class="chat_message friend_msg"><a href=""><i class="fa fa-chevron-down"></i></a><p>' + 'Ok!' + '</p><small>15:40</small></div>');
+           $('.container_right_chatSpace').append('<div class="chat_message friend_msg"><a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a><div class="message"><p>Ok!</p></div><div class="msg_info"><ul><li>Info</li><li>Cancella</li></ul></div><small>15:40</small></div>');
        }
 });
+
+
+
+
+
+

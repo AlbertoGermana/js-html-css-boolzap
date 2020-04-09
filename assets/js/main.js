@@ -93,6 +93,27 @@ $(document).ready(function(){
             $(this).parent().parent().parent().remove();
         })
 
+    // Al click della chat cambia selezione (tramite class)
+    $('.single_chat').click(function(){
+        $('.single_chat').removeClass('chat_selected');
+        $(this).addClass('chat_selected');
+    
+        /* scorro tra tutte le conversazioni  */
+        $('.container_right_chatSpace').each(function(){
+            /* e controllo che ci sia corrispondenza tra attributo-proprietà della chat selezionata e attributo-proprietà della conversazione  */
+            if($('.chat_selected').data('singlechat') == $(this).data('conversazione')){
+                //se vero visualizzo la conversazione corrispondente
+                $('.container_right_chatSpace').hide();
+                $(this).show();
+            }
+    
+        
+        })
+
+    })    
+
+
+
 
     ////////////////////// funzioni //////////////////////////
     
@@ -128,3 +149,4 @@ $(document).ready(function(){
 
 
 // studiare quel which nella funzione(e)
+// sistemare css con categorie

@@ -132,13 +132,16 @@ body{
 .single_chat_lastWrite{
   height: 50px;
 }
+.single_chat:hover{
+  background-color: #F5F5F5;
+}
 .lastWrite{
   font-size: 12px;
   color: gray;
   margin-top: 10px;
 }
 .chat_selected{
-  background-color: #eaeaea;
+  background-color: #EBEBEB;
 }
 .single_chat_lastMsg{
   font-size: 12px;
@@ -184,6 +187,7 @@ small{
   padding: 15px;
   overflow-y: scroll;
   background: url('../img/bg_chat.jpg');
+  display: none;
 }
 .container_right_bottomBar{
   height: 75px;
@@ -277,4 +281,7 @@ small{
 }
 .fa.fa-chevron-down{
   display: none;
+}
+.active{
+  display: block;
 }

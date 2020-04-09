@@ -26,8 +26,6 @@ Cancella messaggio: cliccando sul messaggio appare un menu a tendina che permett
 $(document).ready(function(){
     // dichiaro variabili di riferimento
     var sendingMsg = $('#sending_message');
-    var searchField = $('#searchField');
-    var singleChatName = $('.single_chat_name');
 
     //al click del pulsante invia messaggio
     $('.sendMsg').click(sendMessage);
@@ -53,11 +51,11 @@ $(document).ready(function(){
       
     
     // Filtro degli amici nella lista all'inserimento di caratteri da tastiera
-    searchField.keyup(function(){
+    $('#searchField').keyup(function(){
         // salvo input utente in campo del filtro
-        var testoInserito = searchField.val();
+        var testoInserito = $(this).val();
         // ciclo tra tutti i nomi della lista chat
-        singleChatName.each(function(){
+        $('.single_chat_name').each(function(){
             // se il testo digitato è incluso tra i nomi
             if($(this).text().toLowerCase().includes(testoInserito.toLowerCase())){
                 /* mostro i risultati */
@@ -69,6 +67,7 @@ $(document).ready(function(){
             }        
         });
     });
+
     // Al passaggio del mouse si mostra/nasconde il bottone per l'info menu
     $('.container_right_chatSpace').on('mouseover','.chat_message',
         function(){
@@ -88,12 +87,7 @@ $(document).ready(function(){
         function(){
             $(this).hide();
         })
-    // Se clicclo sul secondo elemento del menu-messaggio (cancella), nasconde il messaggio
-    /* $('.msg_info').on('click','ul li:last-child',
-        function(){
-            $(this).parent().parent().parent().hide();
-        }) */
-    
+    // Se clicclo sul secondo elemento del menu-messaggio (cancella), cancella il messaggio
     $('.msg_info').on('click','ul li:last-child',
         function(){
             $(this).parent().parent().parent().remove();
@@ -133,7 +127,4 @@ $(document).ready(function(){
 });
 
 
-
-
-
-
+// studiare quel which nella funzione(e)

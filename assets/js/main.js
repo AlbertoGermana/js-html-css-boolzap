@@ -27,6 +27,10 @@ $(document).ready(function(){
     // dichiaro variabili di riferimento
     var sendingMsg = $('#sending_message');
 
+    // al caricamento della pagina scambio in automatico l'avatar dell'amico selezionato nella conversazione attiva
+
+    
+    
     //al click del pulsante invia messaggio
     $('.sendMsg').click(sendMessage);
     
@@ -93,11 +97,19 @@ $(document).ready(function(){
             $(this).parent().parent().parent().remove();
         })
 
-    // Al click della chat cambia selezione (tramite class)
+    // Al click della chat 
     $('.single_chat').click(function(){
+        // cambio la selezione
         $('.single_chat').removeClass('chat_selected');
         $(this).addClass('chat_selected');
-    
+        
+        //do la stessa immagine avatar alla conversazione e alla chat selezionata
+        var avatarSelected = $('.chat_selected>img').attr('src');
+        $('#friend_avatar>img').attr('src', avatarSelected);
+        //do la stesso nome alla conversazione e alla chat selezionata
+        var nameFriendSelected = $('.chat_selected').find('.single_chat_name').text();
+        $('#friend_selected').text(nameFriendSelected);
+        
         /* scorro tra tutte le conversazioni  */
         $('.container_right_chatSpace').each(function(){
             /* e controllo che ci sia corrispondenza tra attributo-proprietà della chat selezionata e attributo-proprietà della conversazione  */
@@ -106,12 +118,19 @@ $(document).ready(function(){
                 $('.container_right_chatSpace').removeClass('active');
                 //e visualizzo la conversazione corrispondente
                 $(this).addClass('active');
+                
+                
+                
             }
     
         
         })
 
     })    
+
+// variabile contiene indirizzo immagine amico in conversazione
+    
+
 
 
 

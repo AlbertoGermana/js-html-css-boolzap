@@ -10,14 +10,16 @@
       <div class="siteContainer flexCentered">
               <!-- container centrale, cuore del sito -->
         <div class="container">
-           
+            
+            <!-- ---------------- -->
             <!-- colonna sinistra -->
+            <!-- ---------------- -->
             <div class="container_left" >
                 <!-- barra in alto alla colonna sinistra -->
                 <div class="container_left_topBar">
                     <!-- avatar utente -->
                     <div id="user_avatar" class="half_bar avatar">
-                        <img class="avatar" src="assets/img/avatar0.jpg" alt="Your photo profile">
+                        <img class="avatar" src="assets/img/me.jpg" alt="Your photo profile">
                     </div>
                     <!-- pulsanti barra in alto colonna sinistra -->
                     <div class="half_bar no_link">
@@ -48,10 +50,10 @@
                     <div class="chatList">
                         
                         <!-- singola chat -->
-                        <div class="single_chat flexCentered" data-singlechat="1">
-                            <img class="avatar" src="assets/img/avatar1.jpg" alt="Michele">
+                        <div class="single_chat flexCentered chat_selected" data-singlechat="1">
+                            <img class="avatar" src="assets/img/avatar1.png" alt="Michele">
                             <div class="single_chat_details">
-                                <p class="single_chat_name">Michele</p>
+                                <p class="single_chat_name">Simba</p>
                                 <p class="single_chat_lastMsg">Non poteva essere altrimenti</p>
                             </div>
                             <div class="single_chat_lastWrite">
@@ -61,9 +63,9 @@
                         
                         <!-- singola chat -->
                         <div class="single_chat flexCentered" data-singlechat="2">
-                            <img class="avatar" src="assets/img/avatar2.jpg" alt="Mario">
+                            <img class="avatar" src="assets/img/avatar2.png" alt="Timon">
                             <div class="single_chat_details">
-                                <p class="single_chat_name">Mario</p>
+                                <p class="single_chat_name">Timon</p>
                                 <p class="single_chat_lastMsg">Non poteva essere altrimenti</p>
                             </div>
                             <div class="single_chat_lastWrite">
@@ -73,9 +75,9 @@
 
                         <!-- singola chat -->
                         <div class="single_chat flexCentered" data-singlechat="3">
-                            <img class="avatar" src="assets/img/avatar3.jpg" alt="Gianfranco">
+                            <img class="avatar" src="assets/img/avatar3.png" alt="Pumbaa">
                             <div class="single_chat_details">
-                                <p class="single_chat_name">Gianfranco</p>
+                                <p class="single_chat_name">Pumbaa</p>
                                 <p class="single_chat_lastMsg">Non poteva essere altrimenti</p>
                             </div>
                             <div class="single_chat_lastWrite">
@@ -85,9 +87,9 @@
 
                         <!-- singola chat -->
                         <div class="single_chat flexCentered" data-singlechat="4">
-                            <img class="avatar" src="assets/img/avatar4.jpg" alt="Pippo">
+                            <img class="avatar" src="assets/img/avatar4.png" alt="Ade">
                             <div class="single_chat_details">
-                                <p class="single_chat_name">Pippo</p>
+                                <p class="single_chat_name">Ade</p>
                                 <p class="single_chat_lastMsg">Non poteva essere altrimenti</p>
                             </div>
                             <div class="single_chat_lastWrite">
@@ -96,10 +98,10 @@
                         </div>
 
                         <!-- singola chat -->
-                        <div class="single_chat flexCentered chat_selected" data-singlechat="5">
-                            <img class="avatar" src="assets/img/avatar5.jpg" alt="Marco">
+                        <div class="single_chat flexCentered" data-singlechat="5">
+                            <img class="avatar" src="assets/img/avatar5.png" alt="Ira">
                             <div class="single_chat_details">
-                                <p class="single_chat_name">Marco</p>
+                                <p class="single_chat_name">Ira</p>
                                 <p class="single_chat_lastMsg">Non poteva essere altrimenti</p>
                             </div>
                             <div class="single_chat_lastWrite">
@@ -109,9 +111,9 @@
 
                         <!-- singola chat -->
                         <div class="single_chat flexCentered" data-singlechat="6">
-                            <img class="avatar" src="assets/img/avatar7.jpg" alt="Matteo">
+                            <img class="avatar" src="assets/img/avatar6.png" alt="Gaston">
                             <div class="single_chat_details">
-                                <p class="single_chat_name">Matteo</p>
+                                <p class="single_chat_name">Gaston</p>
                                 <p class="single_chat_lastMsg">Non poteva essere altrimenti</p>
                             </div>
                             <div class="single_chat_lastWrite">
@@ -121,9 +123,9 @@
 
                         <!-- singola chat -->
                         <div class="single_chat flexCentered" data-singlechat="7">
-                            <img class="avatar" src="assets/img/avatar6.jpg" alt="Martina">
+                            <img class="avatar" src="assets/img/avatar7.png" alt="Neytiri">
                             <div class="single_chat_details">
-                                <p class="single_chat_name">Martina</p>
+                                <p class="single_chat_name">Neytiri</p>
                                 <p class="single_chat_lastMsg">Non poteva essere altrimenti</p>
                             </div>
                             <div class="single_chat_lastWrite">
@@ -133,9 +135,9 @@
 
                         <!-- singola chat -->
                         <div class="single_chat flexCentered" data-singlechat="8">
-                            <img class="avatar" src="assets/img/avatar8.jpg" alt="Claudio">
+                            <img class="avatar" src="assets/img/avatar8.png" alt="Olaf">
                             <div class="single_chat_details">
-                                <p class="single_chat_name">Claudio</p>
+                                <p class="single_chat_name">Olaf</p>
                                 <p class="single_chat_lastMsg">Non poteva essere altrimenti</p>
                             </div>
                             <div class="single_chat_lastWrite">
@@ -147,17 +149,19 @@
                 </div>
             </div> 
 
+            <!-- -------------- -->
             <!-- colonna destra -->
+            <!-- -------------- -->
             <div class="container_right" >
                  <!-- barra in alto alla colonna destra -->
                 <div class="container_right_topBar">
                     <!-- avatar e info ultimo accesso amico -->
                     <div class="friend">
-                        <div id="friend_avatar" class="half_bar avatar">
-                            <img class="avatar" src="assets/img/avatar1.jpg" alt="Your friend photo profile">
+                        <div id="friend_avatar" class="half_bar">
+                            <img class="avatar" src="assets/img/avatar1.png" alt="Your friend photo profile">
                         </div>
                         <div class="friend_chat_details">
-                            <p id="friend_selected">Michele</p>
+                            <p id="friend_selected">Simba</p>
                             <small>Ultimo accesso alle ore 15:29</small>
                         </div>    
                     </div>
@@ -170,14 +174,14 @@
                 </div>
                 
                 <!-- spazio riservato alla conversazione 1 -->
-                <div class="container_right_chatSpace" data-conversazione="1">
+                <div class="container_right_chatSpace active" data-conversazione="1">
                    
                    
                     <!-- messaggio dell'amico -->
                     <div class="chat_message friend_msg">
                         <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
                         <div class="message">
-                            <p>Sotto la panca la capra campa. Sotto la panca...?</p>
+                            <p>Voglio diventar presto un REEE!</p>
                             
                         </div>
                         <div class="msg_info">
@@ -193,7 +197,7 @@
                     <div class="chat_message user_msg">
                         <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
                         <div class="message">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea aliquid necessitatibus maiores vitae voluptatum iusto eveniet quo sequi repellat eum explicabo dignissimos eius voluptate, et hic placeat quod id eos.</p>
+                            <p>Ce la puoi fare.. Credici!</p>
                         </div>
                         <div class="msg_info">
                             <ul>
@@ -212,7 +216,7 @@
                     <div class="chat_message friend_msg">
                         <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
                         <div class="message">
-                            <p>Che cos'è l'amore?</p>
+                            <p>Ho un po' di fame. Ci dividiamo un bel lombrico?</p>
                             
                         </div>
                         <div class="msg_info">
@@ -228,7 +232,7 @@
                     <div class="chat_message user_msg">
                         <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
                         <div class="message">
-                            <p>Leggiti un bel libro e forse lo scoprirai</p>
+                            <p>No grazie, la mia dieta non me lo permette. Per quanto mi piacerebbe..</p>
                         </div>
                         <div class="msg_info">
                             <ul>
@@ -247,7 +251,7 @@
                     <div class="chat_message friend_msg">
                         <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
                         <div class="message">
-                            <p>Di dove sei?</p>
+                            <p>PRRRRRRR. Ops... si è sentito?</p>
                             
                         </div>
                         <div class="msg_info">
@@ -263,7 +267,7 @@
                     <div class="chat_message user_msg">
                         <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
                         <div class="message">
-                            <p>Di Palermo</p>
+                            <p>Non so di cosa parli</p>
                         </div>
                         <div class="msg_info">
                             <ul>
@@ -282,7 +286,7 @@
                     <div class="chat_message friend_msg">
                         <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
                         <div class="message">
-                            <p>Perché ti sei trasferito al nord?</p>
+                            <p>Che mortorio questa chat!</p>
                             
                         </div>
                         <div class="msg_info">
@@ -298,7 +302,7 @@
                     <div class="chat_message user_msg">
                         <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
                         <div class="message">
-                            <p>Perché voglio fare della programmazione il mio mestiere</p>
+                            <p>Meglio di stare con quelle povere anime perdute con cui ti ritrovi..</p>
                         </div>
                         <div class="msg_info">
                             <ul>
@@ -311,13 +315,13 @@
                 </div>
 
                 <!-- spazio riservato alla conversazione 5 -->
-                <div class="container_right_chatSpace active" data-conversazione="5">                   
+                <div class="container_right_chatSpace" data-conversazione="5">                   
                    
                     <!-- messaggio dell'amico -->
                     <div class="chat_message friend_msg">
                         <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
                         <div class="message">
-                            <p>Ti spaventa il Coronavirus?</p>
+                            <p>Sono arrabbiato con te!</p>
                             
                         </div>
                         <div class="msg_info">
@@ -333,7 +337,7 @@
                     <div class="chat_message user_msg">
                         <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
                         <div class="message">
-                            <p>Il giusto. Ne mi faccio prendere dal panico, ne faccio finta che non esista. Sto attento.</p>
+                            <p>Sai che novità</p>
                         </div>
                         <div class="msg_info">
                             <ul>
@@ -352,7 +356,7 @@
                     <div class="chat_message friend_msg">
                         <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
                         <div class="message">
-                            <p>Che ne pensi se andiamo a prendere qualcosa da bere?</p>
+                            <p>Pensavo di andare a cacciare domani mattina. Vieni con me?</p>
                             
                         </div>
                         <div class="msg_info">
@@ -368,7 +372,7 @@
                     <div class="chat_message user_msg">
                         <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
                         <div class="message">
-                            <p>Per me ok. Tu a casa tua, io a casa mia. Non possiamo uscire! #iorestoacasa</p>
+                            <p>A parte che sono vegetariano. Ma non condivido l'uccisione degli animali per "sport" o divertimento. Passo.</p>
                         </div>
                         <div class="msg_info">
                             <ul>
@@ -387,7 +391,7 @@
                     <div class="chat_message friend_msg">
                         <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
                         <div class="message">
-                            <p>Com'è Palermo?</p>
+                            <p>Io ti vedo!</p>
                             
                         </div>
                         <div class="msg_info">
@@ -403,7 +407,7 @@
                     <div class="chat_message user_msg">
                         <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
                         <div class="message">
-                            <p>Bellissima città. Bellissi paesaggi fuori la città. Ma come in ogni bella città, non è tutto oro quel che luccica.</p>
+                            <p>Io no.</p>
                         </div>
                         <div class="msg_info">
                             <ul>
@@ -422,7 +426,7 @@
                     <div class="chat_message friend_msg">
                         <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
                         <div class="message">
-                            <p>Hai animali</p>
+                            <p>Ultimamente sei un po' freddo.</p>
                             
                         </div>
                         <div class="msg_info">
@@ -438,7 +442,7 @@
                     <div class="chat_message user_msg">
                         <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
                         <div class="message">
-                            <p>Avevo un bel gattone. Un giorno mi piacerebbe avere sia un cane che un gatto.</p>
+                            <p>Senti chi parla..</p>
                         </div>
                         <div class="msg_info">
                             <ul>

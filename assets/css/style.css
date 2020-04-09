@@ -49,7 +49,7 @@ body{
 
 .no_link a{
   text-transform: none;
-  font-size: 22px;
+  font-size: 18px;
   color: #b1b1b1;
   margin-right: 20px;
 }
@@ -81,8 +81,6 @@ body{
 .container_left{
   width: calc(100% / 3);
   height: 100%;
-  /* border-right: 1px solid #dbdbd3; */
-  border-right: 1px solid white;
   float: left;
 }
 .container_left_column{

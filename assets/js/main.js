@@ -78,17 +78,17 @@ $(document).ready(function(){
             $(this).find('.fa.fa-chevron-down').hide();
         })
     // Al click del mouse sul pulsante del menu-messaggio appare il menu
-    $('.chat_message').on('click','.chat_menu_btn',
+    $('.container_right_chatSpace').on('click','.chat_menu_btn',
         function(){
-            $(this).parent().children('.msg_info').show();
+            $(this).siblings('.msg_info').show();
         })
     // Se esco dal menu del messaggio questo scompare
-    $('.chat_message').on('mouseleave','.msg_info',
+    $('.container_right_chatSpace').on('mouseleave','.msg_info',
         function(){
             $(this).hide();
         })
     // Se clicclo sul secondo elemento del menu-messaggio (cancella), cancella il messaggio
-    $('.msg_info').on('click','ul li:last-child',
+    $('.container_right_chatSpace').on('click','ul li:last-child',
         function(){
             $(this).parent().parent().parent().remove();
         })

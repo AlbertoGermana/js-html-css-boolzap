@@ -102,9 +102,10 @@ $(document).ready(function(){
         $('.container_right_chatSpace').each(function(){
             /* e controllo che ci sia corrispondenza tra attributo-proprietà della chat selezionata e attributo-proprietà della conversazione  */
             if($('.chat_selected').data('singlechat') == $(this).data('conversazione')){
-                //se vero visualizzo la conversazione corrispondente
-                $('.container_right_chatSpace').hide();
-                $(this).show();
+                // se vero nascondo tutte le altre conversazioni
+                $('.container_right_chatSpace').removeClass('active');
+                //e visualizzo la conversazione corrispondente
+                $(this).addClass('active');
             }
     
         
@@ -139,11 +140,11 @@ $(document).ready(function(){
     
        /* appendo html con nuovo messaggio */
        function sendByUser(messaggio){
-        $('.container_right_chatSpace').append('<div class="chat_message user_msg"><a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a><div class="message"><p>' + messaggio + '</p></div><div class="msg_info"><ul><li>Info</li><li>Cancella</li></ul></div><small>15:40</small></div>');
+        $('.container_right_chatSpace.active').append('<div class="chat_message user_msg"><a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a><div class="message"><p>' + messaggio + '</p></div><div class="msg_info"><ul><li>Info</li><li>Cancella</li></ul></div><small>15:40</small></div>');
        }
        /* appendo html con nuovo messaggio di risposta */
        function sendByFriend(){
-           $('.container_right_chatSpace').append('<div class="chat_message friend_msg"><a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a><div class="message"><p>Ok!</p></div><div class="msg_info"><ul><li>Info</li><li>Cancella</li></ul></div><small>15:40</small></div>');
+           $('.container_right_chatSpace.active').append('<div class="chat_message friend_msg"><a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a><div class="message"><p>Ok!</p></div><div class="msg_info"><ul><li>Info</li><li>Cancella</li></ul></div><small>15:40</small></div>');
        }
 });
 

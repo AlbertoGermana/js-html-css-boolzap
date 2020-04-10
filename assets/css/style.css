@@ -1,4 +1,20 @@
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++ INDICE ++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */ /*
+1. RESET RULES  --------------> riga 19
+2. COMMON RULES  -------------> riga 27
+3. BIG CONTAINERS  -----------> riga 75
+4. LEFT SIDE  ----------------> riga 89
+5. BANNER NOTIFICHE  ---------> riga 101
+6. CERCA CONVERSAZIONE  ------> riga 121
+7. ELENCO CHAT  --------------> riga 137
+8. RIGHT SIDE  ---------------> riga 173
+9. CONVERSAZIONE ATTIVA  -----> riga 182
+10. STILE MESSAGGI INVIATI ---> riga 207
+11. INVIO MESSAGGIO  ---------> riga 262
+12. DOCUMENT READY  ----------> riga 296
+*/
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* ++++++++++++++++++++++++++++++++ RESET RULES +++++++++++++++++++++++++++++++++++ */
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 *{
@@ -15,15 +31,17 @@
 }
 body{
   font-family: 'Lato-Regular';
+  background: linear-gradient(to bottom, #009669 0%, #009669 15%, #ededed 15%, #ededed 100%);
 }
-.flexCentered{
+
+.flexCentered{ /* classe generica per centrare verticalmente e orizzontalmente */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.container_left_topBar,
-.container_right_topBar{
+.container_left_topBar, /* colonna sinistra sito */
+.container_right_topBar{ /* colonna destra sito */
   height: 75px;
   width: 100%;
   background-color: #eaeaea;
@@ -35,38 +53,30 @@ body{
 .container_right_topBar>div{
   height: 100%;
 }
-.half_bar{
-  height: 100%;
+.half_bar{ /* centratura verticale */
   display: flex;
   align-items: center;
 }
 
-.avatar{
+.avatar{ /* forma e grandezza immagini avatar */
   height: 50px;
   border-radius: 100%;
   margin-left: 10px;
 }
 
-.no_link a{
+.no_link{ /* style per icone font-awesome */
   text-transform: none;
   font-size: 18px;
   color: #b1b1b1;
   margin-right: 20px;
 }
 
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
- /* ++++++++++++++++++++++++++++++++ STYLE RULES +++++++++++++++++++++++++++++++++++ */
- /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
-/* +++++++++++++++++++++++++++++++++ BIG CONTAINERS ++++++++++++++++++++++++++++++++ */
- body{
-  background: url('../img/bg.jpg') repeat-x;
-}
+      /* ----------------------------- BIG CONTAINERS ------------------------------- */
 .siteContainer{
   width: 100vw;
   height: 100vh;
 }
-.container{
+.container{ /* finestra web-app */
   width: 80vw;
   height: 95vh;
   min-width: 900px;
@@ -78,16 +88,18 @@ body{
  /* ++++++++++++++++++++++++++++++++  LEFT SIDE  +++++++++++++++++++++++++++++++++++ */
  /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
-.container_left{
+.container_left{ /* tutta la colonna sinistra */
   width: calc(100% / 3);
   height: 100%;
   float: left;
 }
-.container_left_column{
+.container_left_column{ /* colonna di sinistra, appena sotto la barra orizzontale */
   height: calc(100% - 75px);
   width: 100%;
 }
-.notify_request{
+
+      /* ----------------------------- BANNER NOTIFICHE ------------------------------- */
+.notify_request{ /* banner richiesta di attivare notifiche */
   padding: 15px 20px;
   background-color: #8edafc;
   display: flex;
@@ -97,7 +109,7 @@ body{
   color: gray;
   font-size: 14px;
 }
-.notify_request .bellSlashed{
+.notify_request .bellSlashed{ 
   width: 50px;
   height: 50px;
   background-color: white;
@@ -105,11 +117,13 @@ body{
   font-size: 22px;
   margin-right: 10px;
 }
+
+      /* ----------------------------- CERCA CONVERSAZIONE ------------------------------- */
 #chatList_search{
   height: 35px;
   width: 95%;
   border: 1px #dbdbd3 solid;
-  border-radius: 5px;
+  border-radius: 25px;
   margin: 8px auto;
   background-color: #fff;
 }
@@ -117,9 +131,17 @@ body{
   height: 26px;
   width: 86%;
   padding: 0 20px;
-  border: 0; 
+  border: 0;
 }
-.single_chat{
+
+      /* ----------------------------- ELENCO CHAT ------------------------------- */
+
+.chatList{ /* Lista delle chat */
+  height: calc(100% - 138px);
+  overflow-y: scroll;
+}
+
+.single_chat{ /* La singola chat */
   padding: 15px 5px;
   border-bottom: 1px solid #ebebe7;
 }
@@ -138,7 +160,7 @@ body{
   color: gray;
   margin-top: 10px;
 }
-.chat_selected{
+.chat_selected{ /* La chat selezionata */
   background-color: #EBEBEB;
 }
 .single_chat_lastMsg{
@@ -147,39 +169,33 @@ body{
   margin: 6px 0;
 }
 
-.chatList{
-  height: calc(100% - 138px);
-  overflow-y: scroll;
-}
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* ++++++++++++++++++++++++++++++++  RIGHT SIDE  ++++++++++++++++++++++++++++++++++ */
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
-.container_right{
+.container_right{ /* tutta la colonna destra */
   width: calc(100% * 2 / 3);
   height: 100%;
   float: left;
 }
-.container_right_topBar{
-  height: 75px;
-  width: 100%;
-}
-.friend{
+
+      /* -------------------------- CONVERSAZIONE ATTIVA ---------------------------- */
+.friend{ /* info amico nella barra orizzontale in alto */
   display: flex;
   align-items: center;
 }
 .friend_chat_details{ 
   margin-left: 20px;
 }
-#friend_selected{
+#friend_selected{ /* nome dell'amico */
   font-size: 19px;
 }
-small{
+small{ /* ultimo accesso */
   font-size: 14px;
   color: gray;
 }
 
-.container_right_chatSpace{
+.container_right_chatSpace{ /* spazio dedicato ai messaggi */
   height: calc(100% - 150px);
   width: 100%;
   padding: 15px;
@@ -187,7 +203,64 @@ small{
   background: url('../img/bg_chat.jpg');
   display: none;
 }
-.container_right_bottomBar{
+
+/* -------------------------- STILE MESSAGGI INVIATI ---------------------------- */
+.chat_message{ /* tutto il contenitore del messaggio */
+  min-width: 130px;
+  max-width: 400px;
+  border-radius: 10px;
+  margin-top: 16px;
+  position: relative;
+}
+.chat_menu_btn{ /* pulsante info messaggio */
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  color: gray;
+  text-decoration: none;
+}
+.message p{ /* testo messaggio */
+  padding: 15px;
+}
+.chat_message small{ /* orario messaggio */
+  position: absolute;
+  bottom: 3px;
+  right: 10px;
+  font-size: 10px;
+}
+.friend_msg{  /* stile messaggio amico */
+  background-color: white;
+  clear: both;
+  float: left;
+}
+.user_msg{ /* stile messaggio utente */
+  background-color: #D5F9BA;
+  float: right;
+  clear: both;
+}
+.msg_info{ /* menu a comparsa del messaggio */
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: 0;
+  display: none;
+}
+.msg_info ul{ /* lista menu a comparsa messaggio */
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+.msg_info ul li{ /* componenti lista menu a comparsa messaggio */
+  list-style-type: none;
+  color: slategray;
+}
+.msg_info ul li:hover{
+  color: black;
+  font-weight: bold;
+}
+
+      /* -------------------------- INVIO MESSAGGIO ---------------------------- */
+.container_right_bottomBar{ /* barra inferiore destra, dove scrivere messaggio */
   height: 75px;
   width: 100%;
   background-color: #eaeaea;
@@ -202,7 +275,7 @@ small{
   background-color: #009688 ;
   border-radius: 100%;
 }
-.no_link_bottom a{
+.no_link_bottom a{ /* stile delle icone font-awesome */
   text-transform: none;
   font-size: 28px;
   color: #6b7376;
@@ -211,69 +284,16 @@ small{
 .container_right_bottomBar input{
   width: 100%;
   height: 50px;
-  border-radius: 10px;
+  border-radius: 25px;
   border: 0;
   text-indent: 16px;
 }
-.chat_message{
-  min-width: 130px;
-  max-width: 400px;
-  border-radius: 10px;
-  margin-top: 16px;
-  position: relative;
-}
-.chat_menu_btn{
-  position: absolute;
-  top: 3px;
-  right: 10px;
-  color: gray;
-  text-decoration: none;
-}
 
-.message p{
-  padding: 15px;
-}
-.chat_message small{
-  position: absolute;
-  bottom: 3px;
-  right: 10px;
-  font-size: 10px;
-}
-.friend_msg{
-  background-color: white;
-  clear: both;
-  float: left;
-}
-.user_msg{
-  background-color: #D5F9BA;
-  float: right;
-  clear: both;
-}
-.msg_info{
-  position: absolute;
-  z-index: 2;
-  right: 0;
-  top: 0;
-  display: none;
-}
-.msg_info ul{
-  padding: 10px 20px;
-  background-color: white;
-  border-radius: 10px;
-}
-.msg_info ul li{
-  list-style-type: none;
-  color: slategray;
-}
-.msg_info ul li:hover{
-  color: black;
-  font-weight: bold;
-}
-
-/* +++++++++++++++++++++++++++++++ ICONE INVIO ++++++++++++++++++++++++++++++++++ */
-#send,#vocal_msg{
+#send,#vocal_msg{ /* stile pulsante invio messaggio testo o vocale */
   color: white;
 }
+
+      /* -------------------------- DOCUMENT READY ---------------------------- */
 #send{
   display: none;
 }

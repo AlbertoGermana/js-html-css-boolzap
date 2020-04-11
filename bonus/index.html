@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <title>Boolzapp</title>
+
+    </head>
+    <body>          
+      <div class="siteContainer flexCentered">
+              <!-- container centrale, cuore del sito -->
+        <div class="container">
+            
+            <!-- -------------------------------------------- -->
+            <!-- ------------- colonna sinistra ------------- -->
+            <!-- -------------------------------------------- -->
+            <div class="container_left" >
+                <!-- barra in alto alla colonna sinistra -->
+                <div class="container_left_topBar">
+                    <!-- avatar utente -->
+                    <div id="user_avatar" class="half_bar avatar">
+                        <img class="avatar" src="assets/img/me.jpg" alt="Your photo profile">
+                    </div>
+                    <!-- pulsanti barra in alto colonna sinistra -->
+                    <div class="half_bar">
+                        <a href="#"><i class="fas fa-circle-notch no_link"></i></a>
+                        <a href="#"><i class="fas fa-comment-alt no_link"></i></a>
+                        <a href="#"><i class="fas fa-ellipsis-v no_link"></i></a>
+                    </div>
+                </div>
+               
+                <!-- sub-colonna alla colonna sinistra -->
+                <div class="container_left_column">
+                    <!-- riquadro per attivare notifiche desktop -->
+                    <div class="notify_request">
+                        <div class="bellSlashed flexCentered"><i class="fas fa-bell-slash"></i></div>
+                        <div class="notify_details">
+                            <p>Ricevi notifiche di nuovi messaggi</p>
+                            <p><a href="#">Attiva notifiche desktop</a></p>
+                        </div>
+                    </div>
+                   
+                    <!-- campo di ricerca tra le chat -->
+                    <div id="chatList_search" class="flexCentered">
+                        <i class="fas fa-search"></i>
+                        <input id="searchField" type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                    
+                    <!-- lista delle chat -->
+                    <div class="chatList">
+                        
+                        <!-- singola chat -->
+                        <div class="single_chat flexCentered chat_selected" data-singlechat="1">
+                            <img class="avatar" src="assets/img/avatar1.png" alt="Michele">
+                            <div class="single_chat_details">
+                                <p class="single_chat_name">Simba</p>
+                                <p class="single_chat_lastMsg">Ce la puoi fare.. Credici!</p>
+                            </div>
+                            <div class="single_chat_lastWrite">
+                                <p class="lastWrite">09:40</p>
+                            </div>
+                        </div>
+                        
+                        <!-- singola chat -->
+                        <div class="single_chat flexCentered" data-singlechat="2">
+                            <img class="avatar" src="assets/img/avatar2.png" alt="Timon">
+                            <div class="single_chat_details">
+                                <p class="single_chat_name">Timon</p>
+                                <p class="single_chat_lastMsg">No grazie, la mia dieta non me lo ...</p>
+                            </div>
+                            <div class="single_chat_lastWrite">
+                                <p class="lastWrite">09:32</p>
+                            </div>
+                        </div>
+
+                        <!-- singola chat -->
+                        <div class="single_chat flexCentered" data-singlechat="3">
+                            <img class="avatar" src="assets/img/avatar3.png" alt="Pumbaa">
+                            <div class="single_chat_details">
+                                <p class="single_chat_name">Pumbaa</p>
+                                <p class="single_chat_lastMsg">Non so di cosa parli</p>
+                            </div>
+                            <div class="single_chat_lastWrite">
+                                <p class="lastWrite">09:29</p>
+                            </div>
+                        </div>
+
+                        <!-- singola chat -->
+                        <div class="single_chat flexCentered" data-singlechat="4">
+                            <img class="avatar" src="assets/img/avatar4.png" alt="Ade">
+                            <div class="single_chat_details">
+                                <p class="single_chat_name">Ade</p>
+                                <p class="single_chat_lastMsg">Meglio di stare con quelle povere anime...</p>
+                            </div>
+                            <div class="single_chat_lastWrite">
+                                <p class="lastWrite">09:09</p>
+                            </div>
+                        </div>
+
+                        <!-- singola chat -->
+                        <div class="single_chat flexCentered" data-singlechat="5">
+                            <img class="avatar" src="assets/img/avatar5.png" alt="Ira">
+                            <div class="single_chat_details">
+                                <p class="single_chat_name">Ira</p>
+                                <p class="single_chat_lastMsg">Sai che novità</p>
+                            </div>
+                            <div class="single_chat_lastWrite">
+                                <p class="lastWrite">09:01</p>
+                            </div>
+                        </div>
+
+                        <!-- singola chat -->
+                        <div class="single_chat flexCentered" data-singlechat="6">
+                            <img class="avatar" src="assets/img/avatar6.png" alt="Gaston">
+                            <div class="single_chat_details">
+                                <p class="single_chat_name">Gaston</p>
+                                <p class="single_chat_lastMsg">A parte che sono vegetariano. Ma non...</p>
+                            </div>
+                            <div class="single_chat_lastWrite">
+                                <p class="lastWrite">08:46</p>
+                            </div>
+                        </div>
+
+                        <!-- singola chat -->
+                        <div class="single_chat flexCentered" data-singlechat="7">
+                            <img class="avatar" src="assets/img/avatar7.png" alt="Neytiri">
+                            <div class="single_chat_details">
+                                <p class="single_chat_name">Neytiri</p>
+                                <p class="single_chat_lastMsg">Io no.</p>
+                            </div>
+                            <div class="single_chat_lastWrite">
+                                <p class="lastWrite">08:35</p>
+                            </div>
+                        </div>
+
+                        <!-- singola chat -->
+                        <div class="single_chat flexCentered" data-singlechat="8">
+                            <img class="avatar" src="assets/img/avatar8.png" alt="Olaf">
+                            <div class="single_chat_details">
+                                <p class="single_chat_name">Olaf</p>
+                                <p class="single_chat_lastMsg">Senti chi parla..</p>
+                            </div>
+                            <div class="single_chat_lastWrite">
+                                <p class="lastWrite">08:29</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            <!-- ------------------------------------------ -->
+            <!-- --------------colonna destra ------------- -->
+            <!-- ------------------------------------------ -->
+            <div class="container_right" >
+                 <!-- barra in alto alla colonna destra -->
+                <div class="container_right_topBar">
+                    <!-- avatar e info ultimo accesso amico -->
+                    <div class="friend">
+                        <div id="friend_avatar" class="half_bar">
+                            <img class="avatar" src="assets/img/avatar1.png" alt="Your friend photo profile">
+                        </div>
+                        <div class="friend_chat_details">
+                            <p id="friend_selected">Simba</p>
+                            <small class="lastSeen">Ultimo accesso alle ore 
+                                <small class="lastSeenTime">15:29</small>
+                            </small>
+                            <small class="friendStatus">Online</small>
+                            <small class="friendWriting">Sta scrivendo...</small>
+                        </div>    
+                    </div>
+                    <!-- pulsanti barra in alto colonna destra -->
+                    <div class="half_bar ">
+                        <a href="#"><i class="fas fa-search no_link"></i></a>
+                        <a href="#"><i class="fas fa-paperclip no_link"></i></a>
+                        <a href="#"><i class="fas fa-ellipsis-v no_link"></i></a>
+                    </div>
+                </div>
+                
+                <!-- spazio riservato alla conversazione 1 -->
+                <div class="container_right_chatSpace active" data-conversazione="1">
+                   
+                   
+                    <!-- messaggio dell'amico -->
+                    <div class="chat_message friend_msg">
+                        <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
+                        <div class="message">
+                            <p>Voglio diventar presto un REEE!</p>
+                        </div>
+                        <div class="msg_info">
+                            <ul>
+                                <li>Info</li>
+                                <li>Cancella</li>
+                            </ul>
+                        </div>
+                        <small>09:35</small>
+                    </div>
+
+                    <!-- messaggio dell'utente -->
+                    <div class="chat_message user_msg">
+                        <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
+                        <div class="message">
+                            <p>Ce la puoi fare.. Credici!</p>
+                        </div>
+                        <div class="msg_info">
+                            <ul>
+                                <li>Info</li>
+                                <li>Cancella</li>
+                            </ul>
+                        </div>
+                        <small>09:40</small>
+                    </div>
+                </div>
+                
+                <!-- spazio riservato alla conversazione 2 -->
+                <div class="container_right_chatSpace" data-conversazione="2">                  
+                   
+                    <!-- messaggio dell'amico -->
+                    <div class="chat_message friend_msg">
+                        <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
+                        <div class="message">
+                            <p>Ho un po' di fame. Ci dividiamo un bel lombrico?</p>
+                        </div>
+                        <div class="msg_info">
+                            <ul>
+                                <li>Info</li>
+                                <li>Cancella</li>
+                            </ul>
+                        </div>
+                        <small>09:20</small>
+                    </div>
+
+                    <!-- messaggio dell'utente -->
+                    <div class="chat_message user_msg">
+                        <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
+                        <div class="message">
+                            <p>No grazie, la mia dieta non me lo permette. Per quanto mi piacerebbe..</p>
+                        </div>
+                        <div class="msg_info">
+                            <ul>
+                                <li>Info</li>
+                                <li>Cancella</li>
+                            </ul>
+                        </div>
+                        <small>09:32</small>
+                    </div>
+                </div>
+
+                <!-- spazio riservato alla conversazione 3 -->
+                <div class="container_right_chatSpace" data-conversazione="3">                   
+                   
+                    <!-- messaggio dell'amico -->
+                    <div class="chat_message friend_msg">
+                        <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
+                        <div class="message">
+                            <p>PRRRRRRR. Ops... si è sentito?</p>
+                        </div>
+                        <div class="msg_info">
+                            <ul>
+                                <li>Info</li>
+                                <li>Cancella</li>
+                            </ul>
+                        </div>
+                        <small>09:15</small>
+                    </div>
+
+                    <!-- messaggio dell'utente -->
+                    <div class="chat_message user_msg">
+                        <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
+                        <div class="message">
+                            <p>Non so di cosa parli</p>
+                        </div>
+                        <div class="msg_info">
+                            <ul>
+                                <li>Info</li>
+                                <li>Cancella</li>
+                            </ul>
+                        </div>
+                        <small>09:29</small>
+                    </div>
+                </div>
+
+                <!-- spazio riservato alla conversazione 4 -->
+                <div class="container_right_chatSpace" data-conversazione="4">                   
+                   
+                    <!-- messaggio dell'amico -->
+                    <div class="chat_message friend_msg">
+                        <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
+                        <div class="message">
+                            <p>Che mortorio questa chat!</p>
+                        </div>
+                        <div class="msg_info">
+                            <ul>
+                                <li>Info</li>
+                                <li>Cancella</li>
+                            </ul>
+                        </div>
+                        <small>09:01</small>
+                    </div>
+
+                    <!-- messaggio dell'utente -->
+                    <div class="chat_message user_msg">
+                        <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
+                        <div class="message">
+                            <p>Meglio di stare con quelle povere anime perdute con cui ti ritrovi..</p>
+                        </div>
+                        <div class="msg_info">
+                            <ul>
+                                <li>Info</li>
+                                <li>Cancella</li>
+                            </ul>
+                        </div>
+                        <small>09:09</small>
+                    </div>
+                </div>
+
+                <!-- spazio riservato alla conversazione 5 -->
+                <div class="container_right_chatSpace" data-conversazione="5">                   
+                   
+                    <!-- messaggio dell'amico -->
+                    <div class="chat_message friend_msg">
+                        <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
+                        <div class="message">
+                            <p>Sono arrabbiato con te!</p>
+                        </div>
+                        <div class="msg_info">
+                            <ul>
+                                <li>Info</li>
+                                <li>Cancella</li>
+                            </ul>
+                        </div>
+                        <small>08:58</small>
+                    </div>
+
+                    <!-- messaggio dell'utente -->
+                    <div class="chat_message user_msg">
+                        <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
+                        <div class="message">
+                            <p>Sai che novità</p>
+                        </div>
+                        <div class="msg_info">
+                            <ul>
+                                <li>Info</li>
+                                <li>Cancella</li>
+                            </ul>
+                        </div>
+                        <small>09:01</small>
+                    </div>
+                </div>
+
+                <!-- spazio riservato alla conversazione 6 -->
+                <div class="container_right_chatSpace" data-conversazione="6">                   
+                   
+                    <!-- messaggio dell'amico -->
+                    <div class="chat_message friend_msg">
+                        <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
+                        <div class="message">
+                            <p>Pensavo di andare a cacciare domani mattina. Vieni con me?</p>
+                        </div>
+                        <div class="msg_info">
+                            <ul>
+                                <li>Info</li>
+                                <li>Cancella</li>
+                            </ul>
+                        </div>
+                        <small>08:40</small>
+                    </div>
+
+                    <!-- messaggio dell'utente -->
+                    <div class="chat_message user_msg">
+                        <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
+                        <div class="message">
+                            <p>A parte che sono vegetariano. Ma non condivido l'uccisione degli animali per "sport" o divertimento. Passo.</p>
+                        </div>
+                        <div class="msg_info">
+                            <ul>
+                                <li>Info</li>
+                                <li>Cancella</li>
+                            </ul>
+                        </div>
+                        <small>08:46</small>
+                    </div>
+                </div>
+
+                <!-- spazio riservato alla conversazione 7 -->
+                <div class="container_right_chatSpace" data-conversazione="7">                   
+                   
+                    <!-- messaggio dell'amico -->
+                    <div class="chat_message friend_msg">
+                        <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
+                        <div class="message">
+                            <p>Io ti vedo!</p>
+                        </div>
+                        <div class="msg_info">
+                            <ul>
+                                <li>Info</li>
+                                <li>Cancella</li>
+                            </ul>
+                        </div>
+                        <small>08:25</small>
+                    </div>
+
+                    <!-- messaggio dell'utente -->
+                    <div class="chat_message user_msg">
+                        <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
+                        <div class="message">
+                            <p>Io no.</p>
+                        </div>
+                        <div class="msg_info">
+                            <ul>
+                                <li>Info</li>
+                                <li>Cancella</li>
+                            </ul>
+                        </div>
+                        <small>08:35</small>
+                    </div>
+                </div>
+
+                <!-- spazio riservato alla conversazione 8 -->
+                <div class="container_right_chatSpace" data-conversazione="8">                   
+                   
+                    <!-- messaggio dell'amico -->
+                    <div class="chat_message friend_msg">
+                        <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
+                        <div class="message">
+                            <p>Ultimamente sei un po' freddo.</p>
+                        </div>
+                        <div class="msg_info">
+                            <ul>
+                                <li>Info</li>
+                                <li>Cancella</li>
+                            </ul>
+                        </div>
+                        <small>08:25</small>
+                    </div>
+
+                    <!-- messaggio dell'utente -->
+                    <div class="chat_message user_msg">
+                        <a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a>
+                        <div class="message">
+                            <p>Senti chi parla..</p>
+                        </div>
+                        <div class="msg_info">
+                            <ul>
+                                <li>Info</li>
+                                <li>Cancella</li>
+                            </ul>
+                        </div>
+                        <small>08:29</small>
+                    </div>
+                </div>
+
+                <!-- barra per digitazione e invio messaggi -->
+                <div class="container_right_bottomBar no_link_bottom">
+                    <a id="smiles_box" href="#"><i class="far fa-smile"></i></a>
+                    <!-- Input di testo per scrivere messaggio da inviare -->
+                    <input id="sending_message" type="text" placeholder="Scrivi un messaggio">
+                    <!-- pulsante invio o messaggio vocale. Cambio gestito da JS -->
+                    <div class="sendMsg flexCentered">
+                        <a id="vocal_msg" href="#"><i class="fas fa-microphone"></i></a>
+                        <a id="send" href="#"><i class="fab fa-telegram-plane"></i></a>
+                    </div>
+                </div>
+            </div> 
+        </div>
+      </div> <!-- fine .siteContainer -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>

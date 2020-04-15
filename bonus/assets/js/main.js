@@ -160,7 +160,7 @@ $(document).ready(function(){
         disconnette facendo apparire l'ultimo accesso */
         setTimeout(nowOnline,3000);
         setTimeout(nowWriting, 6000);
-        setTimeout(sendByFriend,8000);
+        setTimeout(sendByFriend,8000, 'Ok, va bene!', "friend_msg");
         setTimeout(nowOnline,8000);
         setTimeout(nowOffline,12000);
         }
@@ -193,13 +193,13 @@ $(document).ready(function(){
     aggiornamento testo ultimo messaggio nella lista chat
     aggiornamento orario ultimo messaggio lista chat*/
     /* utilizzo handlerbars per compilare html dinamico */
-    function sendByFriend(){
+    function sendByFriend(messaggio, chiScrive){
         var source = $("#msg-template").html();
         var template = Handlebars.compile(source);
 
         var context = { 
-            "user-friend_msg": "friend_msg", 
-            "message": "Ok, ricevuto!",
+            "user-friend_msg": chiScrive, 
+            "message": messaggio,
             "sentTime": nowTime()
         }
         var html = template(context);

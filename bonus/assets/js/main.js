@@ -147,8 +147,8 @@ $(document).ready(function(){
         if(textToSend == "" || textToSend == " "){
             //non cambia nulla
         }else{
-        //lancio funzione e gli passo il messaggio e stampo html
-        sendByUser(textToSend);
+        //lancio funzione e gli passo il messaggio e la classe
+        sendByUser(textToSend, "user_msg");
 
         //svuoto il campo di testo 
         sendingMsg.val('');
@@ -171,8 +171,18 @@ $(document).ready(function(){
     aggiunti: Orario dinamico nel messaggio in conversazione 
     aggiornamento testo ultimo messaggio nella lista chat
     aggiornamento orario ultimo messaggio lista chat*/
-    function sendByUser(messaggio){
-        $('.container_right_chatSpace.active').append('<div class="chat_message user_msg"><a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a><div class="message"><p>' + messaggio + '</p></div><div class="msg_info"><ul><li>Info</li><li>Cancella</li></ul></div><small>'+ nowTime() +'</small></div>');
+    /* utilizzo handlerbars per compilare html dinamico */
+    function sendByUser(messaggio, chiScrive){
+        var source = $("#msg-template").html();
+        var template = Handlebars.compile(source);
+
+        var context = { 
+            "user-friend_msg": chiScrive, 
+            "message": messaggio,
+            "sentTime": nowTime()
+        }
+        var html = template(context);
+        $('.container_right_chatSpace.active').append(html);
         $('.single_chat.chat_selected .lastWrite').text(nowTime);
         $('.single_chat.chat_selected .single_chat_lastMsg').text(messaggio); 
     }
@@ -182,12 +192,21 @@ $(document).ready(function(){
     aggiunti: Orario dinamico nel messaggio in conversazione 
     aggiornamento testo ultimo messaggio nella lista chat
     aggiornamento orario ultimo messaggio lista chat*/
+    /* utilizzo handlerbars per compilare html dinamico */
     function sendByFriend(){
-       var friend_msg = "Ok, va bene!";
-        $('.container_right_chatSpace.active').append('<div class="chat_message friend_msg"><a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a><div class="message"><p>'+ friend_msg + '</p></div><div class="msg_info"><ul><li>Info</li><li>Cancella</li></ul></div><small>'+ nowTime() + '</small></div>');
+        var source = $("#msg-template").html();
+        var template = Handlebars.compile(source);
+
+        var context = { 
+            "user-friend_msg": "friend_msg", 
+            "message": "Ok, ricevuto!",
+            "sentTime": nowTime()
+        }
+        var html = template(context);
+        $('.container_right_chatSpace.active').append(html);
         $('.single_chat.chat_selected .lastWrite').text(nowTime);
-        $('.single_chat.chat_selected .single_chat_lastMsg').text(friend_msg);
-        return friend_msg;
+        $('.single_chat.chat_selected .single_chat_lastMsg').text(context["message"]); 
+        return context["message"];
     }
     
     /* +++++ bonus +++++ */

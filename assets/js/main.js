@@ -142,8 +142,8 @@ $(document).ready(function(){
         if(textToSend == "" || textToSend == " "){
             //non cambia nulla
         }else{
-        //lancio funzione e gli passo il messaggio e stampo html
-        sendByUser(textToSend);
+        //lancio funzione e gli passo il messaggio e la classe
+        sendByUser(textToSend, "user_msg");
 
         //svuoto il campo di testo 
         sendingMsg.val('');
@@ -154,11 +154,34 @@ $(document).ready(function(){
     }
  
     /* appendo html con nuovo messaggio */
-    function sendByUser(messaggio){
-     $('.container_right_chatSpace.active').append('<div class="chat_message user_msg"><a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a><div class="message"><p>' + messaggio + '</p></div><div class="msg_info"><ul><li>Info</li><li>Cancella</li></ul></div><small>15:40</small></div>');
+    /* Utilizzo HandlerBars */
+    function sendByUser(messaggio, chiScrive){
+        var sourceMsg = $("#msg-template").html();
+        var template = Handlebars.compile(sourceMsg);
+        /* Il contenuto da sostituire nell'html */
+        var context = { 
+            "user-friend_msg": chiScrive, 
+            "message": messaggio, 
+            "sentTime": "15:44"};
+        
+        var html = template(context);
+        $('.container_right_chatSpace.active').append(html);
     }
+
     /* appendo html con nuovo messaggio di risposta */
-    function sendByFriend(){
-        $('.container_right_chatSpace.active').append('<div class="chat_message friend_msg"><a class="chat_menu_btn" href="#"><i class="fa fa-chevron-down"></i></a><div class="message"><p>Ok!</p></div><div class="msg_info"><ul><li>Info</li><li>Cancella</li></ul></div><small>15:40</small></div>');
-    }   
+    /* Utilizzo HandlerBars */
+    function sendByFriend(){ 
+        var sourceMsg = $("#msg-template").html();
+        var template = Handlebars.compile(sourceMsg);
+
+        var context = { 
+            "user-friend_msg": "friend_msg", 
+            "message": "Ok come dici tu!", 
+            "sentTime": "15:44"};
+        
+        var html = template(context);
+        $('.container_right_chatSpace.active').append(html);
+
+    
+    }
 });
